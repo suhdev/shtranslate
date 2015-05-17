@@ -1,0 +1,12 @@
+{
+  "name": "ngSuh",
+  "version": "0.1.0",
+  "devDependencies": {
+    "canonical-path": "0.0.2",
+    "dgeni": "^0.4.1",
+    "dgeni-packages": "^0.10.13",
+    "grunt": "^0.4.5",
+    "grunt-ngdocs": "^0.2.7",
+    "ngdocs": "^0.1.0"
+  }
+}

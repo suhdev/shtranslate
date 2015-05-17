@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/dist/scripts/lib.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/dist/scripts/app.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+     angular.module('Suhail',['ngSuh'])
+      .config(['I18NLangProvider',function (IP) {
+        IP.setLocale("en-GB");
+        IP.setFallbackLocale("en-GB");
+        IP.addRepository({
+          "en-GB":"/translation_en.json",
+          "ar-SA":"/translation_ar.json"
+        });
+      }]);
+    angular.module('Suhail')
+      .controller('TestCtrl', ['$scope','I18NLang', function ($S,LANG) {
+        var langs = ['en-GB','ar-SA'];
+        this.switchLanguage = function(){
+          langs.push(langs.shift());
+          LANG.setLocale(langs[0]);
+        };
+      }])
+    </script>
+  </head>
+<body ng-app="Suhail">
+  <div class="container" >
+    <div ng-bind="i18n.kick_boxing" suh-lang="kick.boxing">
+    </div>
+    <div ng-controller="TestCtrl as ctrl">
+      <button ng-click="ctrl.switchLanguage()">Switch</button>
+    </div>
+  </div>
+</body>
+</html>
