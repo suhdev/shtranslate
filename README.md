@@ -45,48 +45,9 @@ Refer to the [module documentation](http://suhdev.github.io/docs/shTranslate) fo
 	<div sh-translation="key1.key2.key3,key1.key2.key5" ng-bind="i18n.key1_key2_key3" ng-attr-title="{{i18n.key1_key2_key5}}">
 	</div>
 ```
-If GitHub repo was used then: 
 
-```javascript
-    var Songkick = require("PATH TO YOUR INSTALLATION");
-```
 
-Create an instance of SongKick using the factory method passing your API key:
-
-```javascript
-    var songKick = SongKick.create("<YOUR API KEY>");
-
-    songkick.getEventDetails("EVENT_ID","DATA_TYPE");
-
-```
-
-#### The returned results 
-
-SongKick responses have the following structure: 
-
-```json
-	{
-		"resultsPage":{
-			"results":{
-
-			}
-		}
-	}
-```
-
-The module returns the 'resultsPage' skipping the outer wrapper object for convenience. See below:
-
-```json
-	{
-		"results":{
-
-		}
-	}
-```
-
-For more details documentation, have a look at the [API's reference](http://suhdev.github.io/docs/songkick-wrapper)
-
-You can request an API key at songkick's [website](http://www.songkick.com/api_key_requests/new).
+For more details check out the [API's reference](http://suhdev.github.io/docs/shTranslate)
 
 Feel free to add/change/use the module in anyway you want. :D
 ### Copyright
