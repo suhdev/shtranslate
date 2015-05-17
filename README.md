@@ -11,7 +11,7 @@ Clone the GitHub repo:
 ```
 
 Add the module to your module's dependencies, and set the configuration. 
-Refer to the [module documentation](http://suhdev.github.io/docs/shTranslate) for examples and detailed functionality.  
+Refer to the [module documentation](http://suhdev.github.io/docs/shtranslate) for examples and detailed functionality.  
 
 ```javascript
     angular.module('MyModule',['shTranslate'])
@@ -47,7 +47,7 @@ Refer to the [module documentation](http://suhdev.github.io/docs/shTranslate) fo
 ```
 
 
-For more details check out the [API's reference](http://suhdev.github.io/docs/shTranslate)
+For more details check out the [API's reference](http://suhdev.github.io/docs/shtranslate)
 
 Feel free to add/change/use the module in anyway you want. :D
 ### Copyright
