@@ -11,7 +11,7 @@
                  Declarative templates with data-binding, MVC, dependency injection and great
                  testability story all implemented with pure client-side JavaScript!">
   <meta name="fragment" content="!">
-  <title ng-bind-template="ngSuh: {{partialTitle}}">Docs</title>
+  <title ng-bind-template="ngTranslate: {{partialTitle}}">Docs</title>
   <script type="text/javascript">
     // dynamically add base tag as well as css and javascript files.
     // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
@@ -42,7 +42,7 @@
       
         addTag('script', {src: 'js/prettify.js'}, sync);
       
-        addTag('script', {src: 'js/app.min.js'}, sync);
+        addTag('script', {src: 'js/shtranslate.js'}, sync);
       
       
       addTag('script', {src: 'js/angular-bootstrap.js'}, sync);
@@ -84,7 +84,7 @@
         <div class="container">
           
           
-            <a  href="/api"  class="brand">ngSuh</a>
+            <a  href="/api"  class="brand">ngTranslate</a>
           
           <ul class="nav">
             <li ng-repeat="(url, name) in sections" ng-class="{active: isActivePath(url)}">

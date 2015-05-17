@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="/dist/scripts/lib.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/dist/scripts/app.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/lib/lib.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/dist/shtranslate.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-     angular.module('Suhail',['ngSuh'])
+     angular.module('Suhail',['shTranslate'])
       .config(['I18NLangProvider',function (IP) {
         IP.setLocale("en-GB");
         IP.setFallbackLocale("en-GB");
@@ -25,7 +25,7 @@
   </head>
 <body ng-app="Suhail">
   <div class="container" >
-    <div ng-bind="i18n.kick_boxing" suh-lang="kick.boxing">
+    <div ng-bind="i18n.kick_boxing" sh-translation="kick.boxing">
     </div>
     <div ng-controller="TestCtrl as ctrl">
       <button ng-click="ctrl.switchLanguage()">Switch</button>

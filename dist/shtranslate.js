@@ -10,8 +10,8 @@
 angular.module('shTranslate',[]);   
 /**
  * @ngdoc directive
- * @name shTranslate.directive:shTranslation
- * @description
+ * @name shTranslate.directive:shTranslation 
+ * @description 
  * Imports the required translations into the i18n object of the scope. See the example below
 <example module="Suhail">
 <file name="index.html">
@@ -20,7 +20,7 @@ angular.module('shTranslate',[]);
     </div>
     <div ng-controller="TestCtrl as ctrl" >
       <button ng-click="ctrl.switchLanguage()">Switch</button>
-    </div>
+    </div> 
   </div>
 </file>
 <file name="script.js">

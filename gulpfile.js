@@ -3,7 +3,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	Dgeni = require('dgeni'),
-	debug = true,
+	debug = false,
 	PATHS = {
 		JS:{
 			LIB:['./components/**/*.min.js'],
@@ -14,38 +14,28 @@ var gulp = require('gulp'),
 gulp.task('concat-lib',function(){
 	gulp.src(PATHS.JS.LIB)
 		.pipe(concat('lib.min.js'))
-		.pipe(gulp.dest('./dist/scripts'));
+		.pipe(gulp.dest('./lib'));
 });
 
-gulp.task('dgeni', function() {
-  try {
-    var dgeni = new Dgeni([require('./docs/config')]);
-    return dgeni.generate();
-  } catch(x) {
-    console.log(x.stack);
-    throw x;
-  }
+gulp.task('dev-js', function() {
+    gulp.src(PATHS.JS.SRC)
+      .pipe(concat('shtranslate.js'))
+      .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('concat-src', function() {
-	if (debug){
-	    gulp.src(PATHS.JS.SRC)
-	      .pipe(concat('app.min.js'))
-	      .pipe(gulp.dest('./dist/scripts'));
-	}else {
-		gulp.src(PATHS.JS.SRC)
-	      .pipe(concat('app.min.js'))
-	      .pipe(uglify())
-	      .pipe(gulp.dest('./dist/scripts'));
-	}
+gulp.task('dist-js',function(){
+	gulp.src(PATHS.JS.SRC)
+		.pipe(concat('shtranslate.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('docs', function() {
 	var options = {
-    scripts: ['./dist/scripts/app.min.js'],
+    scripts: ['./dist/shtranslate.js'],
     html5Mode: false,
     startPage: '/api',
-    title: "ngSuh",
+    title: "ngTranslate",
     titleLink: "/api"
   };
     return gulp.src(['./src/*.js','./src/**/*.js'])
@@ -54,7 +44,7 @@ gulp.task('docs', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('./src/**', ['docs','concat-lib','concat-src']);
+    gulp.watch('./src/**', ['docs','concat-lib','dev-js', 'dist-js']);
 });
 
 gulp.task('default',['watch'],function(){

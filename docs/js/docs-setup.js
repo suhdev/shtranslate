@@ -1,6 +1,6 @@
 NG_DOCS={
   "sections": {
-    "api": "ngSuh"
+    "api": "ngTranslate"
   },
   "pages": [
     {
@@ -51,10 +51,10 @@ NG_DOCS={
       "js/angular-animate.min.js",
       "js/marked.js",
       "js/prettify.js",
-      "js/app.min.js"
+      "js/shtranslate.js"
     ],
     "styles": [],
-    "title": "ngSuh",
+    "title": "ngTranslate",
     "html5Mode": false,
     "editExample": true,
     "navTemplate": false,
@@ -76,6 +76,6 @@ NG_DOCS={
     "angular-animate.min.js",
     "marked.js",
     "prettify.js",
-    "app.min.js"
+    "shtranslate.js"
   ]
 };
